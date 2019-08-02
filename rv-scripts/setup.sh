@@ -17,3 +17,7 @@ dp sdx create \
 dp distrox create --cli-input-json de-cluster.json --name rv-test-1 --profile dev
 
 dp distrox create --cli-input-json de-with-all-cloudstorage.json --name rv-test-2 --profile dev
+
+dp distrox create --cli-input-json de-latest.json --name rv-de-latest-1 --profile dev
+
+dp distrox create --cli-input-json dm-latest.json --name rv-dm-latest-1 --profile dev

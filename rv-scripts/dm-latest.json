@@ -1,7 +1,29 @@
 {
-  "name": "dm-test-1",
+  "name": "rv-latest-dm-1",
   "environmentName": "cdp-demo1",
   "instanceGroups": [
+    {
+      "nodeCount": 1,
+      "name": "compute",
+      "type": "CORE",
+      "recoveryMode": "MANUAL",
+      "template": {
+        "aws": {},
+        "instanceType": "m5.xlarge",
+        "rootVolume": {
+          "size": 50
+        },
+        "attachedVolumes": [
+          {
+            "size": 100,
+            "count": 1,
+            "type": "standard"
+          }
+        ],
+        "cloudPlatform": "AWS"
+      },
+      "recipeNames": []
+    },
     {
       "nodeCount": 1,
       "name": "master",
@@ -45,33 +67,11 @@
         "cloudPlatform": "AWS"
       },
       "recipeNames": []
-    },
-    {
-      "nodeCount": 1,
-      "name": "compute",
-      "type": "CORE",
-      "recoveryMode": "MANUAL",
-      "template": {
-        "aws": {},
-        "instanceType": "m5.xlarge",
-        "rootVolume": {
-          "size": 50
-        },
-        "attachedVolumes": [
-          {
-            "size": 100,
-            "count": 1,
-            "type": "standard"
-          }
-        ],
-        "cloudPlatform": "AWS"
-      },
-      "recipeNames": []
     }
   ],
   "image": {
     "catalog": "cloudbreak-default",
-    "id": "ee68297d-59b3-4cb0-419a-f9e00763bdb4"
+    "id": "747da6ee-e4e5-4fb3-6762-216ce7ac1bf4"
   },
   "network": {
     "aws": {
@@ -80,8 +80,8 @@
     }
   },
   "cluster": {
-    "userName": "",
-    "password": "",
+    "userName": "admin",
+    "password": "admin123",
     "databases": [],
     "cloudStorage": {
       "locations": [
@@ -102,14 +102,15 @@
     },
     "cm": {
       "repository": {
-        "version": "7.x.0",
-        "baseUrl": "http://cloudera-build-us-west-1.vpc.cloudera.com/s3/build/1312036/cm7/7.x.0/redhat7/yum/"
+        "version": "7.x.0-1322878",
+        "baseUrl": "http://cloudera-build-us-west-1.vpc.cloudera.com/s3/build/1322878/cm7/7.x.0/redhat7/yum/",
+        "gpgKeyUrl": ""
       },
       "products": [
         {
           "name": "CDH",
-          "version": "7.0.0-1.cdh7.0.0.p0.1309226",
-          "parcel": "http://cloudera-build-us-west-1.vpc.cloudera.com/s3/build/1309226/cdh/7.x/parcels/"
+          "version": "7.0.0-1.cdh7.0.0.p0.1318335",
+          "parcel": "http://cloudera-build-us-west-1.vpc.cloudera.com/s3/build/1318335/cdh/7.x/parcels/"
         }
       ]
     },
