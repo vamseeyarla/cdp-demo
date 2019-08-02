@@ -15,3 +15,5 @@ dp sdx create \
         --cidr "0.0.0.0/0" --profile dev
 
 dp distrox create --cli-input-json de-cluster.json --name rv-test-1 --profile dev
+
+dp distrox create --cli-input-json de-with-all-cloudstorage.json --name rv-test-2 --profile dev
