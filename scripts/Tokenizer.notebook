@@ -31,7 +31,7 @@ filtered_products_df = split_df.filter("productstring != ''")
 
 cleansed_products_df=filtered_products_df.select(regexp_replace("productstring", "%20", " ").alias('product'), "ip", "date", "url")
 
-cleansed_products_df.write.format("parquet").save(output_path)
+#cleansed_products_df.write.format("parquet").save(output_path)
 
 cleansed_products_df.\
   write.\
