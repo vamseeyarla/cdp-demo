@@ -1,0 +1,28 @@
+{
+  "name": "cdp-demo1",
+  "description": "Ram's favorite demo env 1",
+  "location": {
+    "name": "eu-west-1"
+  },
+  "authentication": {
+    "publicKeyId": "rv-aws-new"
+  },
+  "credentialName": "rv-aws-key",
+  "regions": [
+    "eu-west-1"
+  ],
+  "securityAccess": {
+    "defaultSecurityGroupId": "sg-0b54bcafda0b44b28",
+    "securityGroupIdForKnox": "sg-0b54bcafda0b44b28"
+  },
+  "network": {
+    "subnetIds": [
+      "subnet-02d25e06bb8bcce9e",
+      "subnet-0727c0067a06c31f7",
+      "subnet-08435fb0a78dd9080"
+    ],
+    "aws": {
+      "vpcId": "vpc-071202b5656f08a83"
+    }
+  }
+}
