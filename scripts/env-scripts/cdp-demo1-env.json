@@ -4,9 +4,9 @@
     "name": "eu-west-1"
   },
   "authentication": {
-    "publicKeyId": "akanto-ssh"
+    "publicKeyId": "rv-aws-new"
   },
-  "credentialName": "awshdpcloud",
+  "credentialName": "rv-aws-key",
   "regions": [
     "eu-west-1"
   ],
