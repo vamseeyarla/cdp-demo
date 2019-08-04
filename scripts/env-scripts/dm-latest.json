@@ -84,16 +84,21 @@
     "password": "admin123",
     "databases": [],
     "cloudStorage": {
-      "s3": {
-        "instanceProfile": "arn:aws:iam::980678866538:instance-profile/Altus_Instance_Profile"
-      },
       "locations": [
         {
-          "propertyFile": "zeppelin-site",
-          "propertyName": "zeppelin.notebook.s3.bucket",
-          "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/rv-latest-de-1/zeppelin"
+          "propertyFile": "hive-site",
+          "propertyName": "hive.metastore.warehouse.external.dir",
+          "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/warehouse/tablespace/external/hive"
+        },
+        {
+          "propertyFile": "hive-site",
+          "propertyName": "hive.metastore.warehouse.dir",
+          "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/warehouse/tablespace/managed/hive"
         }
-      ]
+      ],
+      "s3": {
+        "instanceProfile": "arn:aws:iam::980678866538:instance-profile/Altus_Instance_Profile"
+      }
     },
     "cm": {
       "repository": {
@@ -110,10 +115,36 @@
       ]
     },
     "exposedServices": [
-      "ALL"
+      "CM-API",
+      "CM-UI",
+      "AMBARI",
+      "HUE",
+      "WEBHDFS",
+      "HDFSUI",
+      "YARNUIV2",
+      "JOBHISTORYUI",
+      "HIVE",
+      "HIVE_INTERACTIVE",
+      "ATLAS",
+      "SPARKHISTORYUI",
+      "SPARK2HISTORYUI",
+      "ZEPPELIN",
+      "RANGER",
+      "PROFILER-AGENT",
+      "BEACON",
+      "LOGSEARCH",
+      "LIVYSERVER",
+      "LIVYSERVER1",
+      "OOZIE",
+      "SOLR",
+      "HBASEUI",
+      "WEBHBASE"
     ],
     "blueprintName": "CDP 1.0 - Data Mart: Apache Impala, Hue",
     "validateBlueprint": false
+  },
+  "sdx": {
+    "name": "cdp-demo1"
   },
   "tags": {
     "userDefined": {}
