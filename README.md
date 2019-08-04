@@ -1,4 +1,8 @@
 # cdp-demo
+
+## Setup roles, instance profiles for IDBroker
+IDBroker enabled SDX and DistroX clusters requires that AWS roles, instance profiles and the necessary trust relationship is set up between them.
+
 ## Setup environment
 Set up the environment using mow-dev. All configuration done through UI. The scripts in scripts/environment are there for reference purposes
 
