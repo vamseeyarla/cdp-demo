@@ -1,13 +1,12 @@
 {
-  "name": "cdp-demo1",
   "description": "Ram's favorite demo env 1",
   "location": {
     "name": "eu-west-1"
   },
   "authentication": {
-    "publicKeyId": "rv-aws-new"
+    "publicKeyId": "akanto-ssh"
   },
-  "credentialName": "rv-aws-key",
+  "credentialName": "awshdpcloud",
   "regions": [
     "eu-west-1"
   ],

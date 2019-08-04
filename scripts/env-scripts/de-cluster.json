@@ -1,4 +1,5 @@
 {
+  "environmentName": "cdp-demo1",
   "tags": {
     "userDefined": {}
   },
@@ -8,7 +9,21 @@
     "password": "admin123",
     "blueprintName": "CDP 1.0 - Data Engineering: Apache Spark, Apache Hive, Apache Oozie",
     "validateBlueprint": false,
-    "databases": []
+    "cloudStorage": {
+      "s3": {
+        "instanceProfile": "arn:aws:iam::980678866538:instance-profile/Altus_Instance_Profile"
+      },
+      "locations": [
+        {
+          "propertyFile": "zeppelin-site",
+          "propertyName": "zeppelin.notebook.s3.bucket",
+          "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/rv-latest-de-1/zeppelin"
+        }
+      ]
+    },
+    "exposedServices": [
+      "ALL"
+    ]    
   },
   "parameters": {},
   "placement": {
@@ -17,11 +32,8 @@
   },
   "image": {
     "catalog": "cloudbreak-default",
-    "id": "ee68297d-59b3-4cb0-419a-f9e00763bdb4",
-    "os": "redhat7"
+    "os": "centos7"
   },
-  "name": "rv-de-test-1",
-  "environmentName": "cdp-demo1",
   "instanceGroups": [
     {
       "name": "master",
@@ -95,11 +107,5 @@
       "type": "CORE",
       "recoveryMode": "MANUAL"
     }
-  ],
-  "network": {
-    "aws": {
-      "vpcId": "vpc-071202b5656f08a83",
-      "subnetId": "subnet-0727c0067a06c31f7"
-    }
-  }
+  ]
 }

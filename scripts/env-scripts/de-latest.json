@@ -1,5 +1,4 @@
 {
-  "name": "rv-latest-de-1",
   "environmentName": "cdp-demo1",
   "instanceGroups": [
     {
@@ -71,37 +70,20 @@
   ],
   "image": {
     "catalog": "cloudbreak-default",
-    "id": "747da6ee-e4e5-4fb3-6762-216ce7ac1bf4"
-  },
-  "network": {
-    "aws": {
-      "vpcId": "vpc-071202b5656f08a83",
-      "subnetId": "subnet-0727c0067a06c31f7"
-    }
+    "os": "centos7"
   },
   "cluster": {
     "userName": "admin",
     "password": "admin123",
-    "databases": [],
     "cloudStorage": {
       "s3": {
         "instanceProfile": "arn:aws:iam::980678866538:instance-profile/Altus_Instance_Profile"
       },
       "locations": [
         {
-          "propertyFile": "hive-site",
-          "propertyName": "hive.metastore.warehouse.external.dir",
-          "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/warehouse/tablespace/external/hive"
-        },
-        {
           "propertyFile": "zeppelin-site",
           "propertyName": "zeppelin.notebook.s3.bucket",
           "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/rv-latest-de-1/zeppelin"
-        },
-        {
-          "propertyFile": "hive-site",
-          "propertyName": "hive.metastore.warehouse.dir",
-          "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/warehouse/tablespace/managed/hive"
         }
       ]
     },
@@ -120,36 +102,10 @@
       ]
     },
     "exposedServices": [
-      "CM-API",
-      "CM-UI",
-      "AMBARI",
-      "HUE",
-      "WEBHDFS",
-      "HDFSUI",
-      "YARNUIV2",
-      "JOBHISTORYUI",
-      "HIVE",
-      "HIVE_INTERACTIVE",
-      "ATLAS",
-      "SPARKHISTORYUI",
-      "SPARK2HISTORYUI",
-      "ZEPPELIN",
-      "RANGER",
-      "PROFILER-AGENT",
-      "BEACON",
-      "LOGSEARCH",
-      "LIVYSERVER",
-      "LIVYSERVER1",
-      "OOZIE",
-      "SOLR",
-      "HBASEUI",
-      "WEBHBASE"
+      "ALL"
     ],
     "blueprintName": "CDP 1.0 - Data Engineering: Apache Spark, Apache Hive, Apache Oozie",
     "validateBlueprint": false
-  },
-  "sdx": {
-    "name": "cdp-demo1"
   },
   "inputs": {}
 }
