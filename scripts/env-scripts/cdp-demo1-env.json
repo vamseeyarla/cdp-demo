@@ -14,6 +14,19 @@
     "defaultSecurityGroupId": "sg-0b54bcafda0b44b28",
     "securityGroupIdForKnox": "sg-0b54bcafda0b44b28"
   },
+  "telemetry": {
+    "logging": {
+      "s3": {
+        "instanceProfile": "arn:aws:iam::980678866538:instance-profile/akanto-s3-full-access"
+      },
+      "storageLocation": "s3a://cloudbreak-group/user/rvenkatesh/telemetry"
+    }
+  },
+  "aws": {
+    "s3guard": {
+      "dynamoDbTableName": "rv-s3guard"
+    }
+  },    
   "network": {
     "subnetIds": [
       "subnet-02d25e06bb8bcce9e",

@@ -10,13 +10,9 @@
     "blueprintName": "CDP 1.0 - Data Engineering: Apache Spark, Apache Hive, Apache Oozie",
     "validateBlueprint": false,
     "cloudStorage": {
-      "s3": {
-        "instanceProfile": "arn:aws:iam::980678866538:instance-profile/Altus_Instance_Profile"
-      },
       "locations": [
         {
-          "propertyFile": "zeppelin-site",
-          "propertyName": "zeppelin.notebook.s3.bucket",
+          "type": "ZEPPELIN_NOTEBOOK_S3",
           "value": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-dl-1-dev/rv-latest-de-1/zeppelin"
         }
       ]
