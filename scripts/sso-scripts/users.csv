@@ -1,0 +1,7 @@
+email,identityProviderUserId,firstName,lastName,groups
+joe_analyst@eastwestbank.com,joe_analyst,joe_analyst@eastwestbank.com,User,"analyst,us_employee"
+john_finance@eastwestbank.com,john_finance,john_finance@eastwestbank.com,User,"finance,us_employee"
+mark_bizdev@eastwestbank.com,mark_bizdev,mark_bizdev@eastwestbank.com,User,"business_dev,us_employee"
+jeremy_contractor@eastwestbank.com,jeremy_contractor,jeremy_contractor@eastwestbank.com,User,"contractor,us_employee"
+diane_csr@eastwestbank.com,diane_csr,diane_csr@eastwestbank.com,User,"csr,us_employee"
+

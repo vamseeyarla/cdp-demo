@@ -1,0 +1,54 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2016 Red Hat, Inc. and/or its affiliates
+  ~ and other contributors as indicated by the @author tags.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<EntitiesDescriptor Name="urn:keycloak" xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+					xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+	<EntityDescriptor entityID="https://34.221.41.8:8443/auth/realms/eastwestbank">
+		<IDPSSODescriptor WantAuthnRequestsSigned="true"
+			protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+                        <KeyDescriptor use="signing">
+                          <dsig:KeyInfo>
+                            <dsig:KeyName>dkoJYR1mrsUahgCz6-sbqv1QGfhJ6zbuky5NxlYRRQI</dsig:KeyName>
+                            <dsig:X509Data>
+                              <dsig:X509Certificate>MIICpzCCAY8CBgFsdK0J4DANBgkqhkiG9w0BAQsFADAXMRUwEwYDVQQDDAxlYXN0d2VzdGJhbmswHhcNMTkwODA5MDQzODEzWhcNMjkwODA5MDQzOTUzWjAXMRUwEwYDVQQDDAxlYXN0d2VzdGJhbmswggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCQzIvL5MHyYrpSvWZfDOVtzoYyu7tUeJQedVS/u4pgumhiGNYSfIOtSmmPUYWYiKI2aB2MJKTzCDCewl9iqB8xaMyEZSOyiGrmH1cJFDZSB9YlqGKJ+gXQgNWj7WPXfOq4y5KP6HdaRJi0GKRTHoi8KGr/oOGfMoBYqD+Ed1+YtnJf8m/db4GCYY3P/IktebTKw0F5tapK1gcC5DuIOjuKKDnUD+aWV+Zjkh00iMMYZRfeNbN28JgmatkVWGz5/u0ycKogcAFxoYpEck+KGf4YUTvTuetQ/JBgT6eONnyKpF5MGLQarkmPC54mwUNIrgiSbWVgshVA/ES25ncyJvVJAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAkhI9mOs39O7uhZinK3CNH3kIzukRFIFxtyNR1KngrFPA8TftQjT5v/Ws7JNeJtkDvzxDu5MFjTFJkyz+YjyR+qjjl0VupENLH3JLC1jzS1cQLKwMC1MMItq34SLFjDoXn/EeC9UfcOQaQWrzsoeM8w7YTqC1gYlOA+7Tdknk3QSeNVQre6CUZK30GW+oy1lGL0jlWJYdrn+CyKVeeAovzZqMCheJqaQMB4WA2lpmmJLg+rt+ES7gVzTnQX/RaEHUqIRZ7vsHNg9LIG0/10BKpqyx7bJ6v2R7/3aaihDl4DFZZKGzB5aHuGZuTPAGXaR0LG1uRShi6xgavQ1wQK5NE=</dsig:X509Certificate>
+                            </dsig:X509Data>
+                          </dsig:KeyInfo>
+                        </KeyDescriptor>
+
+			<SingleLogoutService
+					Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+					Location="https://34.221.41.8:8443/auth/realms/eastwestbank/protocol/saml" />
+			<SingleLogoutService
+					Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+					Location="https://34.221.41.8:8443/auth/realms/eastwestbank/protocol/saml" />
+			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+			<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
+			<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+				Location="https://34.221.41.8:8443/auth/realms/eastwestbank/protocol/saml" />
+			<SingleSignOnService
+				Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+				Location="https://34.221.41.8:8443/auth/realms/eastwestbank/protocol/saml" />
+			<SingleSignOnService
+				Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+				Location="https://34.221.41.8:8443/auth/realms/eastwestbank/protocol/saml" />
+		</IDPSSODescriptor>
+	</EntityDescriptor>
+</EntitiesDescriptor>
