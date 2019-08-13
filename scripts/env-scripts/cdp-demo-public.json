@@ -1,0 +1,33 @@
+{
+  "name": "cdp-demo-public1",
+  "description": "",
+  "location": {
+    "name": "eu-west-1"
+  },
+  "authentication": {
+    "publicKeyId": "rv-aws-new"
+  },
+  "credentialName": "rv-aws-key",
+  "telemetry": {
+    "logging": {
+      "s3": {
+        "instanceProfile": "arn:aws:iam::980678866538:instance-profile/akanto-s3-full-access"
+      },
+      "storageLocation": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-private1/logs/"
+    }
+  },
+  "regions": [
+    "eu-west-1"
+  ],
+  "securityAccess": {
+    "cidr": "0.0.0.0/0"
+  },
+  "aws": {
+    "s3guard": {
+      "dynamoDbTableName": "rv-s3guard"
+    }
+  },
+  "network": {
+    "networkCidr": "10.50.0.0/16"
+  }
+}
