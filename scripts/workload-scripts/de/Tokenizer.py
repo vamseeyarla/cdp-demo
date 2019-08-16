@@ -10,11 +10,10 @@ spark = SparkSession \
     .getOrCreate()
 
 
-input_path = 's3a://cloudbreak-group/user/dhdemo/data'
-output_path = 's3a://cloudbreak-group/user/dhdemo/data/tokenized'
+input_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/data/retail_clickstream/raw/original_access_logs'
+output_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/data/retail_clickstream/enriched'
 database_name = 'default'
-table_name = 'weblogs'
-user_name = 'eqbr'
+table_name = 'weblogs1'
 
 base_df=spark.read.text(input_path)
 
@@ -29,11 +28,18 @@ filtered_products_df = split_df.filter("productstring != ''")
 
 cleansed_products_df=filtered_products_df.select(regexp_replace("productstring", "%20", " ").alias('product'), "ip", "date_logged", "url")
 
-cleansed_products_df.write.mode("overwrite").format("parquet").save(output_path)
+#cleansed_products_df.write.mode("overwrite").format("parquet").save(output_path)
 
-#cleansed_products_df.\
-#  write.\
-#  mode("overwrite").\
-#  saveAsTable(database_name+'.'+table_name+user_name, format="parquet", path=output_path)
-  
+cleansed_products_df.\
+  write.\
+  mode("overwrite").\
+  saveAsTable(database_name+'.'+table_name+'_external', format="parquet", path=output_path)
 
+from pyspark_llap.sql import HiveWarehouseBuilder as hwc
+from pyspark_llap import HiveWarehouseSession as hws
+
+hive = hwc\
+      .session(spark)\
+      .build()
+
+cleansed_products_df.write.format(hws().HIVE_WAREHOUSE_CONNECTOR).option("table", database_name+'.'+table_name+'_acid').mode("overwrite").save()

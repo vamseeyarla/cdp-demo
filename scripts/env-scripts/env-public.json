@@ -1,5 +1,5 @@
 {
-  "name": "cdp-demo-public1",
+  "name": "cdp-latest-public",
   "description": "",
   "location": {
     "name": "eu-west-1"
@@ -13,7 +13,7 @@
       "s3": {
         "instanceProfile": "arn:aws:iam::980678866538:instance-profile/akanto-s3-full-access"
       },
-      "storageLocation": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-demo-private1/logs/"
+      "storageLocation": "s3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/logs/"
     }
   },
   "regions": [
