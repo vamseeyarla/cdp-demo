@@ -12,8 +12,8 @@ spark = SparkSession \
 
 input_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/data/retail_clickstream/raw/original_access_logs'
 output_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/data/retail_clickstream/enriched'
-database_name = 'default'
-table_name = 'weblogs1'
+database_name = 'retail_clickstream'
+table_name = 'weblogs'
 
 base_df=spark.read.text(input_path)
 
