@@ -21,6 +21,8 @@ scp -r ../../data/retail_clickstream adam@${hostname}:/tmp/
 ssh adam@${hostname} 'bash -s' < copyData.sh ${datalake_root}
 </code>
 
+### Give permissions to data_eng for retail_clickstream in Ranger
+
 ### Ssh to DE cluster and run the de scripts
 <code>
 scp -r de adam@{hostname}:~/
