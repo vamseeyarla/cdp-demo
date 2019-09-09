@@ -17,6 +17,7 @@ cd scripts/workload-scripts
 #### Copy data to the data engineering cluster host and then to S3
 <code>
 scp -r ../../data/retail_clickstream adam@${hostname}:/tmp/
+  
 ssh adam@${hostname} 'bash -s' < copyData.sh ${datalake_root}
 </code>
 
@@ -25,7 +26,9 @@ ssh adam@${hostname} 'bash -s' < copyData.sh ${datalake_root}
 scp -r de adam@{hostname}:~/
 
 ssh adam@${hostname}
+
 cd de
+
 chmod u+x runDE.sh
 
 </code>
