@@ -1,2 +1,2 @@
-SELECT COUNT(*) FROM weblogs_external;
-SELECT COUNT(*) FROM weblogs_acid;
+SELECT COUNT(*) FROM retail_clickstream.weblogs_external;
+SELECT COUNT(*) FROM retail_clickstream.weblogs_acid;

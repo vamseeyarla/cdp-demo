@@ -1,6 +1,6 @@
 use retail_clickstream;
 
-select product_name as 'Top products sold', regexp_replace(url,'%20',' ') as url
+select product_name as `Top products sold`, regexp_replace(url,'%20',' ') as url
   from (
         select row_number()
                 over (

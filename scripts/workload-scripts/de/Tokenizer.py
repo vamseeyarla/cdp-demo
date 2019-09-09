@@ -10,8 +10,8 @@ spark = SparkSession \
     .getOrCreate()
 
 
-input_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/data/retail_clickstream/raw/original_access_logs'
-output_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/cdp-latest-public/data/retail_clickstream/enriched'
+input_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/e2e-demo-1/data/retail_clickstream/raw/original_access_logs'
+output_path = 's3a://cloudbreak-group/user/rvenkatesh/dls/e2e-demo-1/data/retail_clickstream/enriched'
 database_name = 'retail_clickstream'
 table_name = 'weblogs'
 
