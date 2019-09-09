@@ -22,6 +22,7 @@ ssh adam@${hostname} 'bash -s' < copyData.sh ${datalake_root}
 </code>
 
 ### Give permissions to data_eng for retail_clickstream in Ranger
+Todo: We need to get the policy export/import from ranger
 
 ### Ssh to DE cluster and run the de scripts
 <code>
