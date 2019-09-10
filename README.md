@@ -26,7 +26,9 @@ Todo: We need to get the policy export/import from ranger
 
 ### Ssh to DE cluster and run the de scripts
 <code>
-scp -r de adam@{hostname}:~/
+scp -r de adam@${hostname}:~/
+  
+scp -r dm adam@${hostname}:~/
 
 ssh adam@${hostname}
 
@@ -38,6 +40,11 @@ chmod u+x runDE.sh
 Change the datalake name in Tokenizer.py and createProdTables.sql appropriately
 <code>
 ./runDE.sh
+</code>
+
+### Success if this command runs and returns the top 10 products
+<code>
+ssh adam@${hostname} 'beeline -f dm/bi_query.sql'
 </code>
 
 ## Hacks and workarounds
