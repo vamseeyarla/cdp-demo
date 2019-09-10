@@ -17,15 +17,21 @@ cd scripts/workload-scripts
 #### Copy data to the data engineering cluster host and then to S3
 <code>
 scp -r ../../data/retail_clickstream adam@${hostname}:/tmp/
+  
 ssh adam@${hostname} 'bash -s' < copyData.sh ${datalake_root}
 </code>
+
+### Give permissions to data_eng for retail_clickstream in Ranger
+Todo: We need to get the policy export/import from ranger
 
 ### Ssh to DE cluster and run the de scripts
 <code>
 scp -r de adam@{hostname}:~/
 
 ssh adam@${hostname}
+
 cd de
+
 chmod u+x runDE.sh
 
 </code>
