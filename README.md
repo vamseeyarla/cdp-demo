@@ -29,7 +29,7 @@ cd de
 chmod u+x runDE.sh
 
 </code>
-Change the datalake name in Tokenizer.py appropriately
+Change the datalake name in Tokenizer.py and createProdTables.sql appropriately
 <code>
 ./runDE.sh
 </code>
