@@ -7,7 +7,7 @@ create external table if not exists campaigns(
 )
 COMMENT 'This table contains marketing campaigns information.' 
 row format delimited fields terminated by '|'
-LOCATION '/sko_demo_data/structured/marketing_campaigns/campaigns'
+LOCATION 's3a://REPLACE_BUCKET_NAME_HERE/data/marketing_campaigns/campaigns'
 TBLPROPERTIES('department'='Marketing');
 
 create external table if not exists clickstream(
@@ -21,7 +21,7 @@ create external table if not exists clickstream(
 )
 COMMENT 'This table contains clickstream information collected from users' 
 row format delimited fields terminated by '|'
-LOCATION '/sko_demo_data/structured/marketing_campaigns/clickstream'
+LOCATION 's3a://REPLACE_BUCKET_NAME_HERE/data/marketing_campaigns/clickstream'
 TBLPROPERTIES('department'='Marketing');
 
 create external table if not exists sales(
@@ -34,7 +34,7 @@ create external table if not exists sales(
 )
 COMMENT 'This table contains sales information generated from sales' 
 row format delimited fields terminated by '|'
-LOCATION '/sko_demo_data/structured/marketing_campaigns/sales'
+LOCATION 's3a://REPLACE_BUCKET_NAME_HERE/data/marketing_campaigns/sales'
 TBLPROPERTIES('department'='Marketing');
 
 create external table if not exists users(
@@ -50,5 +50,5 @@ create external table if not exists users(
 )
 COMMENT 'This table contains information about users.' 
 row format delimited fields terminated by '|'
-LOCATION '/sko_demo_data/structured/marketing_campaigns/users'
+LOCATION 's3a://REPLACE_BUCKET_NAME_HERE/data/marketing_campaigns/users'
 TBLPROPERTIES('department'='Marketing');

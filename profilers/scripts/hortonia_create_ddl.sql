@@ -45,7 +45,7 @@
  OUTPUTFORMAT                                                                              
    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat'                                      
  LOCATION                                                                                  
-   '/sko_demo_data/structured/hortonia_bank/security/apps/hive/warehouse/hortoniabank.db/us_customers'  
+   's3a://REPLACE_BUCKET_NAME_HERE/data/hortonia_bank/security/apps/hive/warehouse/hortoniabank.db/us_customers'  
  TBLPROPERTIES (                                                                           
    'COLUMN_STATS_ACCURATE'='{\"BASIC_STATS\":\"true\"}',                                   
    'numFiles'='1',                                                                         
@@ -103,7 +103,7 @@
  OUTPUTFORMAT                                                                              
    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat'                                      
  LOCATION                                                                                  
-   '/sko_demo_data/structured/hortonia_bank/security/apps/hive/warehouse/hortoniabank.db/ww_customers'  
+   's3a://REPLACE_BUCKET_NAME_HERE/data/hortonia_bank/security/apps/hive/warehouse/hortoniabank.db/ww_customers'  
  TBLPROPERTIES (                                                                           
    'COLUMN_STATS_ACCURATE'='{\"BASIC_STATS\":\"true\"}',                                   
    'numFiles'='1',                                                                         
@@ -124,7 +124,7 @@
  OUTPUTFORMAT                                                                              
    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat'                                      
  LOCATION                                                                                  
-   '/sko_demo_data/structured/hortonia_bank/security/apps/hive/warehouse/hortoniabank.db/eu_countries'  
+   's3a://REPLACE_BUCKET_NAME_HERE/data/hortonia_bank/security/apps/hive/warehouse/hortoniabank.db/eu_countries'  
  TBLPROPERTIES (                                                                           
    'COLUMN_STATS_ACCURATE'='{\"BASIC_STATS\":\"true\"}',                                   
    'numFiles'='1',                                                                         
@@ -145,7 +145,7 @@
  OUTPUTFORMAT                                                                     
    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat'                             
  LOCATION                                                                         
-   '/sko_demo_data/structured/hortonia_bank/security/apps/hive/warehouse/finance.db/tax_2015'  
+   's3a://REPLACE_BUCKET_NAME_HERE/data/hortonia_bank/security/apps/hive/warehouse/finance.db/tax_2015'  
  TBLPROPERTIES (                                                                  
    'COLUMN_STATS_ACCURATE'='{\"BASIC_STATS\":\"true\"}',                          
    'numFiles'='1',                                                                
@@ -174,7 +174,7 @@
  OUTPUTFORMAT                                                    
    'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'  
  LOCATION                                                        
-   '/sko_demo_data/structured/hortonia_bank/security/source/claim'            
+   's3a://REPLACE_BUCKET_NAME_HERE/data/hortonia_bank/security/source/claim'            
  TBLPROPERTIES (                                                 
    'numFiles'='1',                                               
    'totalSize'='16132',                                          
@@ -198,7 +198,7 @@
  OUTPUTFORMAT                                                    
    'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'  
  LOCATION                                                        
-   '/sko_demo_data/structured/hortonia_bank/security/dev/cost_savings'        
+   's3a://REPLACE_BUCKET_NAME_HERE/data/hortonia_bank/security/dev/cost_savings'        
  TBLPROPERTIES (                                                 
    'numFiles'='1',                                               
    'totalSize'='6830',                                           
