@@ -13,3 +13,4 @@ sed -i 's/REPLACE_BUCKET_NAME_HERE/${BUCKET_NAME}' setup_data.sh
 sed -i 's/REPLACE_HS2_HOST_NAME/${HS2_HOST_NAME}/g' setup_data.sh
 sed -i 's/REPLACE_BUCKET_NAME_HERE/${BUCKET_NAME}/g' hortonia_create_ddl.sql
 sed -i 's/REPLACE_BUCKET_NAME_HERE/${BUCKET_NAME}/g' marketing-campaign-ddl-script.sql
+sed -i 's/REPLACE_HS2_HOST_NAME/${HS2_HOST_NAME}/g' run_queries.sh
