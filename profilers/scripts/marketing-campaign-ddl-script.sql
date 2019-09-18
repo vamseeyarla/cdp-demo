@@ -1,6 +1,4 @@
-create database if not exists marketing;
-
-create external table if not exists marketing.campaigns(
+create external table if not exists campaigns(
 	campaign_id int,
 	gender_preference string,
 	mobile_optimized boolean,
@@ -12,7 +10,7 @@ row format delimited fields terminated by '|'
 LOCATION '/sko_demo_data/structured/marketing_campaigns/campaigns'
 TBLPROPERTIES('department'='Marketing');
 
-create external table if not exists marketing.clickstream(
+create external table if not exists clickstream(
 	click_time timestamp,
 	ip string,
 	product_id int,
@@ -26,7 +24,7 @@ row format delimited fields terminated by '|'
 LOCATION '/sko_demo_data/structured/marketing_campaigns/clickstream'
 TBLPROPERTIES('department'='Marketing');
 
-create external table if not exists marketing.sales(
+create external table if not exists sales(
 	sale_time timestamp,
 	customer_id int,
 	product_id int,
@@ -39,7 +37,7 @@ row format delimited fields terminated by '|'
 LOCATION '/sko_demo_data/structured/marketing_campaigns/sales'
 TBLPROPERTIES('department'='Marketing');
 
-create external table if not exists marketing.users(
+create external table if not exists users(
 	customer_id int,
 	customer_name string,
 	customer_gender string,

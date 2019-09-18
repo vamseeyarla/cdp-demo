@@ -1,9 +1,4 @@
-create database if not exists hortoniabank;
-create database if not exists finance;
-create database if not exists claim;
-create database if not exists cost_savings;
-
- CREATE EXTERNAL TABLE IF NOT EXISTS `hortoniabank.us_customers`(                                                 
+ CREATE EXTERNAL TABLE IF NOT EXISTS `us_customers`(                                                 
    `number` string,                                                                        
    `gender` string,                                                                        
    `title` string,                                                                         
@@ -60,7 +55,7 @@ create database if not exists cost_savings;
    'transient_lastDdlTime'='1472449244',
    'department'='Insurance Claims');                                                   
 
- CREATE EXTERNAL TABLE  IF NOT EXISTS `hortoniabank.ww_customers`(                                                 
+ CREATE EXTERNAL TABLE  IF NOT EXISTS `ww_customers`(                                                 
    `gender` string,                                                                        
    `title` string,                                                                         
    `givenname` string,                                                                     
@@ -118,7 +113,7 @@ create database if not exists cost_savings;
    'transient_lastDdlTime'='1473204580',
    'department'='Insurance Claims');   
                                                    
- CREATE EXTERNAL TABLE  IF NOT EXISTS `hortoniabank.eu_countries`(                                                 
+ CREATE EXTERNAL TABLE  IF NOT EXISTS `eu_countries`(                                                 
    `countryname` string,                                                                   
    `countrycode` string,                                                                   
    `region` string)                                                                        
@@ -138,7 +133,7 @@ create database if not exists cost_savings;
    'totalSize'='697',                                                                      
    'transient_lastDdlTime'='1472453725');                                                  
 
- CREATE EXTERNAL TABLE  IF NOT EXISTS `finance.tax_2015`(                                                 
+ CREATE EXTERNAL TABLE  IF NOT EXISTS `tax_2015`(                                                 
    `ssn` string,                                                                  
    `fed_tax` int,                                                                 
    `state_tax` int,                                                               
@@ -159,7 +154,7 @@ create database if not exists cost_savings;
    'totalSize'='574',                                                             
    'transient_lastDdlTime'='1472456231');                                          
 
- CREATE EXTERNAL TABLE  IF NOT EXISTS `claim.provider_summary`(                 
+ CREATE EXTERNAL TABLE  IF NOT EXISTS `provider_summary`(                 
    `providerid` string,                                          
    `providername` string,                                        
    `providerstreetaddress` string,                               
@@ -186,7 +181,7 @@ create database if not exists cost_savings;
    'transient_lastDdlTime'='1474444382',
    'department'='Insurance Claims');
 
- CREATE EXTERNAL TABLE IF NOT EXISTS `cost_savings.claim_savings`(             
+ CREATE EXTERNAL TABLE IF NOT EXISTS `claim_savings`(             
    `reportdate` date,                                            
    `name` string,                                                
    `sequenceid` int,                                             
