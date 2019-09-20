@@ -7,6 +7,6 @@ SLEEP_INTERVAL=60
 
 while true; do
 	INDEX=$(($RANDOM % $SIZE))
-	echo beeline -u ${HS2_URL} -e 'select * from ${TABLES[$INDEX]} limit 1;'
+	beeline -u ${HS2_URL} -e "select * from ${TABLES[$INDEX]} limit 1;"
 	sleep ${SLEEP_INTERVAL}
 done
