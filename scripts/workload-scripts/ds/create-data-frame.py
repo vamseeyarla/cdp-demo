@@ -6,25 +6,17 @@ import joblib
 
 spark = SparkSession \
     .builder \
-    .appName("Pyspark Tokenize") \
+    .appName("Create Dataframe") \
     .enableHiveSupport() \
     .getOrCreate()
 
+orders_df=spark.sql("""
+  select products.product_name as product_name, concat(customers.customer_fname, ' ', customers.customer_lname) as customer_name 
+    from order_items join products on products.product_id = order_items.order_item_product_id
+    join orders on orders.order_id = order_items.order_item_order_id
+    join customers on customers.customer_id = orders.order_customer_id
+    """)
 
-input_path = '/home/cdsw/access.log.2'
-base_df=spark.read.text(input_path)
-
-split_df = base_df.select(regexp_extract('value', r'([^ ]*)', 1).alias('ip'),
-                          regexp_extract('value', r'(\d\d\/\w{3}\/\d{4}:\d{2}:\d{2}:\d{2} -\d{4})', 1).alias('date_logged'),
-                          regexp_extract('value', r'^(?:[^ ]*\ ){6}([^ ]*)', 1).alias('url'),
-                          regexp_extract('value', r'(?<=product\/).*?(?=\s|\/)', 0).alias('productstring')
-                         )
-
-
-filtered_products_df = split_df.filter("productstring != ''")
-
-cleansed_products_df=filtered_products_df.select(regexp_replace("productstring", "%20", " ").alias('product'), "ip", "date_logged", "url")
-
-local_df = cleansed_products_df.toPandas()
+local_df = orders_df.toPandas()
 
 joblib.dump(local_df, 'clickstream.pkl')

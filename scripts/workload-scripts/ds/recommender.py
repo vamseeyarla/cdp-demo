@@ -1,8 +1,8 @@
 import joblib
 
 local_df = joblib.load('clickstream.pkl')
-all_products = local_df['product'].unique()
-known_ratings = local_df.groupby(['ip', 'product']).size()
+all_products = local_df['product_name'].unique()
+known_ratings = local_df.groupby(['customer_name', 'product_name']).size()
 
 algo = joblib.load('recommender.pkl')
 
@@ -14,7 +14,7 @@ def recommend(data):
   Input shape: {"ip": "99.99.191.106"}
   Output shape: {"recommendation": "The North Face Women's Recon Backpack"}
   """
-  ip_to_recommend = data['ip']
+  ip_to_recommend = data['customer_name']
   max_rating_est = 0
   recommendation = "unknown"
   for product in all_products:
@@ -25,4 +25,4 @@ def recommend(data):
         max_rating_est = rating_est
   return {"recommendation": recommendation}
 
-#recommend({"ip": "99.99.191.106"})
+#recommend({"customer_name": "Harry Smith"})
